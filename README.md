@@ -1,1 +1,1 @@
-# Processor-Support-Gaussian-Smoothing
+# Processor-Supporting-Gaussian-Smoothing
