@@ -7,7 +7,8 @@ module decoder (
     input logic [1:0] opcode,
     output logic write_En, Imm_sel, func, ROM_sel
 );
-
+    timeunit 1ns; timeprecision 10ps;
+    
     always_comb begin
         unique case (opcode)
                 `NOP: begin               // for after reset it should be '0

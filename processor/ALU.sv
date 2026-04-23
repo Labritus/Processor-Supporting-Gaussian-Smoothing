@@ -7,7 +7,8 @@ module ALU #(parameter n = 8)(
     input logic func, // ALU function code
     output logic signed [n-1:0] result // ALU result
 );
-
+    timeunit 1ns; timeprecision 10ps;
+    
     logic signed [n:0] full_ADD;
     logic signed [2*n-1:0] full_MUL;
 
@@ -19,7 +20,7 @@ module ALU #(parameter n = 8)(
                 result = full_ADD[n-1:0];
             end
 
-            `funucMUL: begin
+            `funcMUL: begin
                 result = full_MUL[2*n-2:n-1];
             end
         endcase

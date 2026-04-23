@@ -5,7 +5,8 @@ module mux_ROM #(parameter n = 8)(
     input logic ROM_sel,
     output logic signed [n-1:0] Wdata // to Wdata of Reg
 );
-
+    timeunit 1ns; timeprecision 10ps;
+    
     always_comb begin
         if (ROM_sel == 1'b1) begin
             Wdata = ROM_data;

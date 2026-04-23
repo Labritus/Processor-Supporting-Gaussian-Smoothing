@@ -8,8 +8,9 @@ module Reg #(parameter n = 8)(
     output logic signed [n-1:0] Rd_data, Rs_data,
     output logic signed [n-1:0] LED    
 );
-
-    logic signed [n-1:0] R [3:0];
+    timeunit 1ns; timeprecision 10ps;
+    
+    logic signed [n-1:0] R [0:3];
     // 00: R0 = '0
     // 01: R1 = SW7_0
     // 10: R2 temp
