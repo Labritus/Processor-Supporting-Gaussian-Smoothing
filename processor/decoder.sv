@@ -13,28 +13,28 @@ module decoder (
                 `NOP: begin               // for after reset it should be '0
                     write_En = 1'b0;  // dont allow write reg
                     Imm_sel = 1'b0;
-                    func = `IMUL;         // actually 1'b0
+                    func = `funcMUL;         // actually 1'b0
                     ROM_sel = 0;
                 end
 
                 `ADD: begin
                     write_En = 1'b1;
                     Imm_sel = 1'b0;
-                    func = `RADD;
+                    func = `funcADD;
                     ROM_sel = 0;
                 end
 
-                `MUL: begin
+                `MULI: begin
                     write_En = 1'b1;
                     Imm_sel = 1'b1;
-                    func = `IMUL;
+                    func = `funcMUL;
                     ROM_sel = 0;
                 end
 
-                `LOAD: begin
+                `LOADI: begin
                     write_En = 1'b1;
                     Imm_sel = 1'b1;
-                    func = `RADD;         // still use RADD function
+                    func = `funcADD;         // still use RADD function
                     ROM_sel = 1;
                 end
         endcase

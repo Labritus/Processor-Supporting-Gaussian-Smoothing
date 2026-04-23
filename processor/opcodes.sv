@@ -1,18 +1,18 @@
 // opcodes.sv
 //-----------------------------------------------------
-// 4 opcodes: NOP, ADD, MUL, LOAD
+// 4 opcodes: NOP, ADD, MULI, LOADI
 // opcodes are 2 bits long
-// required 1-bit ALU code in the lowest 1 bits (LOAD uses adder, NOP set ALu function IMUL)
+// required 1-bit ALU code in the lowest 1 bits (LOADI uses adder, NOP set ALu function MULI)
 //-----------------------------------------------------
 
 // NOP
 `define NOP  2'b00
 
-// ADD  rd rs     ; rd = rd + rs
+// ADD  %d %s     ; %d = %d + rs
 `define ADD  2'b01
 
-// MUL  rd rs imm ; rd = rs * imm
-`define MUL  2'b10
+// MULI  %d %s imm ; %d = %s * imm
+`define MULI  2'b10
 
-// LOAD rd rs imm ; rd = rs + imm
-`define LOAD 2'b11
+// LOADI %d %s imm ; %d = %s + imm
+`define LOADI 2'b11

@@ -7,12 +7,12 @@ module Reg #(parameter n = 8)(
     input logic signed [n-1:0] Wdata,
     output logic signed [n-1:0] Rd_data, Rs_data,
     output logic signed [n-1:0] LED    
-)
+);
 
     logic signed [n-1:0] R [3:0];
     // 00: R0 = '0
     // 01: R1 = SW7_0
-    // 10: R2
+    // 10: R2 temp
     // 11: R3 (LED = R3)
 
     // write logic

@@ -1,6 +1,6 @@
 // module of mux_ROM
 
-module ALU #(parameter n = 8)(
+module mux_ROM #(parameter n = 8)(
     input logic signed [n-1:0] ALU_data, ROM_data, // from result of ALU and ROM
     input logic ROM_sel,
     output logic signed [n-1:0] Wdata // to Wdata of Reg

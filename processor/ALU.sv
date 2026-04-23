@@ -15,11 +15,11 @@ module ALU #(parameter n = 8)(
         full_ADD = a + b;
         full_MUL = a * b;
         unique case (func)
-            `ADD: begin
+            `funcADD: begin
                 result = full_ADD[n-1:0];
             end
 
-            `MUL: begin
+            `funucMUL: begin
                 result = full_MUL[2*n-2:n-1];
             end
         endcase
