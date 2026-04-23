@@ -10,7 +10,7 @@ module Reg #(parameter n = 8)(
 );
     timeunit 1ns; timeprecision 10ps;
     
-    logic signed [n-1:0] R [0:3];
+    logic signed [n-1:0] R [2:3];
     // 00: R0 = '0
     // 01: R1 = SW7_0
     // 10: R2 temp
