@@ -1,0 +1,1 @@
+xmverilog  +gui +access+r  picoMIPS_stim.sv  picoMIPS.sv ALU.sv decoder.sv mux_Imm.sv mux_ROM.sv pc.sv prog.sv Reg.sv ROM_wave.sv
