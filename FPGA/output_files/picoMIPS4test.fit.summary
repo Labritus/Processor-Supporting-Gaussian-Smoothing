@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Apr 24 10:29:41 2026
+Fitter Status : Successful - Fri Apr 24 14:55:29 2026
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Standard Edition
 Revision Name : picoMIPS4test
-Top-level Entity Name : picoMIPS4test
+Top-level Entity Name : picoMIPS
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 84 / 32,070 ( < 1 % )
-Total registers : 47
+Logic utilization (in ALMs) : 72 / 32,070 ( < 1 % )
+Total registers : 23
 Total pins : 19 / 457 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

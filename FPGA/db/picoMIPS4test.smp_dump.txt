@@ -1,5 +1,5 @@
 
-State Machine - |picoMIPS4test|picoMIPS:myDesign|pc:pc1|state
+State Machine - |picoMIPS|pc:pc1|state
 Name state.WAIT_0 state.RUN state.WAIT_1 
 state.WAIT_0 0 0 0 
 state.WAIT_1 1 0 1 

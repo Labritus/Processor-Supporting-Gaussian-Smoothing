@@ -1,5 +1,5 @@
 Analysis & Synthesis report for picoMIPS4test
-Fri Apr 24 10:28:47 2026
+Fri Apr 24 14:54:30 2026
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
 
 
@@ -14,20 +14,19 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
-  9. State Machine - |picoMIPS4test|picoMIPS:myDesign|pc:pc1|state
+  9. State Machine - |picoMIPS|pc:pc1|state
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: counter:c
- 13. Parameter Settings for User Entity Instance: picoMIPS:myDesign
- 14. Parameter Settings for User Entity Instance: picoMIPS:myDesign|ALU:ALU1
- 15. Parameter Settings for User Entity Instance: picoMIPS:myDesign|mux_Imm:mux_Imm1
- 16. Parameter Settings for User Entity Instance: picoMIPS:myDesign|mux_ROM:mux_ROM1
- 17. Parameter Settings for User Entity Instance: picoMIPS:myDesign|pc:pc1
- 18. Parameter Settings for User Entity Instance: picoMIPS:myDesign|prog:prog1
- 19. Parameter Settings for User Entity Instance: picoMIPS:myDesign|Reg:Reg1
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |picoMIPS
+ 13. Parameter Settings for User Entity Instance: ALU:ALU1
+ 14. Parameter Settings for User Entity Instance: mux_Imm:mux_Imm1
+ 15. Parameter Settings for User Entity Instance: mux_ROM:mux_ROM1
+ 16. Parameter Settings for User Entity Instance: pc:pc1
+ 17. Parameter Settings for User Entity Instance: prog:prog1
+ 18. Parameter Settings for User Entity Instance: Reg:Reg1
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -54,13 +53,13 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +---------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 24 10:28:47 2026              ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 24 14:54:29 2026              ;
 ; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Standard Edition ;
 ; Revision Name                   ; picoMIPS4test                                      ;
-; Top-level Entity Name           ; picoMIPS4test                                      ;
+; Top-level Entity Name           ; picoMIPS                                           ;
 ; Family                          ; Cyclone V                                          ;
 ; Logic utilization (in ALMs)     ; N/A                                                ;
-; Total registers                 ; 47                                                 ;
+; Total registers                 ; 23                                                 ;
 ; Total pins                      ; 19                                                 ;
 ; Total virtual pins              ; 0                                                  ;
 ; Total block memory bits         ; 0                                                  ;
@@ -80,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; picoMIPS4test      ; picoMIPS4test      ;
+; Top-level entity name                                                           ; picoMIPS           ; picoMIPS4test      ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -178,73 +177,69 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                    ;
-+----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                                       ; Library ;
-+----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------+---------+
-; ../processor/wave.hex            ; yes             ; User Hexadecimal (Intel-Format) File  ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/wave.hex         ;         ;
-; ../processor/prog.hex            ; yes             ; User Hexadecimal (Intel-Format) File  ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.hex         ;         ;
-; ../processor/ROM_wave.sv         ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ROM_wave.sv      ;         ;
-; ../processor/Reg.sv              ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/Reg.sv           ;         ;
-; ../processor/prog.sv             ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.sv          ;         ;
-; ../processor/picoMIPS4test.sv    ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS4test.sv ;         ;
-; ../processor/picoMIPS.sv         ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv      ;         ;
-; ../processor/pc.sv               ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/pc.sv            ;         ;
-; ../processor/opcodes.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/opcodes.sv       ;         ;
-; ../processor/mux_ROM.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/mux_ROM.sv       ;         ;
-; ../processor/mux_Imm.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/mux_Imm.sv       ;         ;
-; ../processor/decoder.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/decoder.sv       ;         ;
-; ../processor/counter.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/counter.sv       ;         ;
-; ../processor/ALUcodes.sv         ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ALUcodes.sv      ;         ;
-; ../processor/ALU.sv              ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ALU.sv           ;         ;
-+----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; ../processor/wave.hex            ; yes             ; User Hexadecimal (Intel-Format) File  ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/wave.hex    ;         ;
+; ../processor/prog.hex            ; yes             ; User Hexadecimal (Intel-Format) File  ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.hex    ;         ;
+; ../processor/ROM_wave.sv         ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ROM_wave.sv ;         ;
+; ../processor/Reg.sv              ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/Reg.sv      ;         ;
+; ../processor/prog.sv             ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.sv     ;         ;
+; ../processor/picoMIPS.sv         ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv ;         ;
+; ../processor/pc.sv               ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/pc.sv       ;         ;
+; ../processor/opcodes.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/opcodes.sv  ;         ;
+; ../processor/mux_ROM.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/mux_ROM.sv  ;         ;
+; ../processor/mux_Imm.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/mux_Imm.sv  ;         ;
+; ../processor/decoder.sv          ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/decoder.sv  ;         ;
+; ../processor/ALUcodes.sv         ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ALUcodes.sv ;         ;
+; ../processor/ALU.sv              ; yes             ; User SystemVerilog HDL File           ; H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ALU.sv      ;         ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                          ;
-+---------------------------------------------+----------------------------------------+
-; Resource                                    ; Usage                                  ;
-+---------------------------------------------+----------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 84                                     ;
-;                                             ;                                        ;
-; Combinational ALUT usage for logic          ; 130                                    ;
-;     -- 7 input functions                    ; 1                                      ;
-;     -- 6 input functions                    ; 36                                     ;
-;     -- 5 input functions                    ; 29                                     ;
-;     -- 4 input functions                    ; 13                                     ;
-;     -- <=3 input functions                  ; 51                                     ;
-;                                             ;                                        ;
-; Dedicated logic registers                   ; 47                                     ;
-;                                             ;                                        ;
-; I/O pins                                    ; 19                                     ;
-;                                             ;                                        ;
-; Total DSP Blocks                            ; 1                                      ;
-;                                             ;                                        ;
-; Maximum fan-out node                        ; picoMIPS:myDesign|ALU:ALU1|result[7]~5 ;
-; Maximum fan-out                             ; 31                                     ;
-; Total fan-out                               ; 727                                    ;
-; Average fan-out                             ; 3.37                                   ;
-+---------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimate of Logic utilization (ALMs needed) ; 72                   ;
+;                                             ;                      ;
+; Combinational ALUT usage for logic          ; 106                  ;
+;     -- 7 input functions                    ; 1                    ;
+;     -- 6 input functions                    ; 36                   ;
+;     -- 5 input functions                    ; 29                   ;
+;     -- 4 input functions                    ; 13                   ;
+;     -- <=3 input functions                  ; 27                   ;
+;                                             ;                      ;
+; Dedicated logic registers                   ; 23                   ;
+;                                             ;                      ;
+; I/O pins                                    ; 19                   ;
+;                                             ;                      ;
+; Total DSP Blocks                            ; 1                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; ALU:ALU1|result[7]~5 ;
+; Maximum fan-out                             ; 31                   ;
+; Total fan-out                               ; 632                  ;
+; Average fan-out                             ; 3.76                 ;
++---------------------------------------------+----------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------+---------------+--------------+
-; |picoMIPS4test             ; 130 (0)             ; 47 (0)                    ; 0                 ; 1          ; 19   ; 0            ; |picoMIPS4test                                      ; picoMIPS4test ; work         ;
-;    |counter:c|             ; 24 (24)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|counter:c                            ; counter       ; work         ;
-;    |picoMIPS:myDesign|     ; 106 (0)             ; 23 (0)                    ; 0                 ; 1          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign                    ; picoMIPS      ; work         ;
-;       |ALU:ALU1|           ; 16 (16)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|ALU:ALU1           ; ALU           ; work         ;
-;       |ROM_wave:ROM_wave1| ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|ROM_wave:ROM_wave1 ; ROM_wave      ; work         ;
-;       |Reg:Reg1|           ; 18 (18)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|Reg:Reg1           ; Reg           ; work         ;
-;       |decoder:decoder1|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|decoder:decoder1   ; decoder       ; work         ;
-;       |mux_Imm:mux_Imm1|   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|mux_Imm:mux_Imm1   ; mux_Imm       ; work         ;
-;       |mux_ROM:mux_ROM1|   ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|mux_ROM:mux_ROM1   ; mux_ROM       ; work         ;
-;       |pc:pc1|             ; 9 (9)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|pc:pc1             ; pc            ; work         ;
-;       |prog:prog1|         ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS4test|picoMIPS:myDesign|prog:prog1         ; prog          ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------+---------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
+; |picoMIPS                  ; 106 (0)             ; 23 (0)                    ; 0                 ; 1          ; 19   ; 0            ; |picoMIPS                    ; picoMIPS    ; work         ;
+;    |ALU:ALU1|              ; 16 (16)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |picoMIPS|ALU:ALU1           ; ALU         ; work         ;
+;    |ROM_wave:ROM_wave1|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS|ROM_wave:ROM_wave1 ; ROM_wave    ; work         ;
+;    |Reg:Reg1|              ; 18 (18)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS|Reg:Reg1           ; Reg         ; work         ;
+;    |decoder:decoder1|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS|decoder:decoder1   ; decoder     ; work         ;
+;    |mux_Imm:mux_Imm1|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS|mux_Imm:mux_Imm1   ; mux_Imm     ; work         ;
+;    |mux_ROM:mux_ROM1|      ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS|mux_ROM:mux_ROM1   ; mux_ROM     ; work         ;
+;    |pc:pc1|                ; 9 (9)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS|pc:pc1             ; pc          ; work         ;
+;    |prog:prog1|            ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |picoMIPS|prog:prog1         ; prog        ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -261,15 +256,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------+
-; State Machine - |picoMIPS4test|picoMIPS:myDesign|pc:pc1|state ;
-+--------------+--------------+-----------+---------------------+
-; Name         ; state.WAIT_0 ; state.RUN ; state.WAIT_1        ;
-+--------------+--------------+-----------+---------------------+
-; state.WAIT_0 ; 0            ; 0         ; 0                   ;
-; state.WAIT_1 ; 1            ; 0         ; 1                   ;
-; state.RUN    ; 1            ; 1         ; 0                   ;
-+--------------+--------------+-----------+---------------------+
++--------------------------------------------------------+
+; State Machine - |picoMIPS|pc:pc1|state                 ;
++--------------+--------------+-----------+--------------+
+; Name         ; state.WAIT_0 ; state.RUN ; state.WAIT_1 ;
++--------------+--------------+-----------+--------------+
+; state.WAIT_0 ; 0            ; 0         ; 0            ;
+; state.WAIT_1 ; 1            ; 0         ; 1            ;
+; state.RUN    ; 1            ; 1         ; 0            ;
++--------------+--------------+-----------+--------------+
 
 
 +------------------------------------------------------+
@@ -277,7 +272,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 47    ;
+; Total registers                              ; 23    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 23    ;
@@ -287,95 +282,85 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |picoMIPS4test|picoMIPS:myDesign|Reg:Reg1|Mux8    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |picoMIPS4test|picoMIPS:myDesign|Reg:Reg1|Mux5    ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |picoMIPS4test|picoMIPS:myDesign|pc:pc1|Selector6 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |picoMIPS|Reg:Reg1|Mux8    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |picoMIPS|Reg:Reg1|Mux5    ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |picoMIPS|pc:pc1|Selector6 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
-+--------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:c ;
-+----------------+-------+-------------------------------+
-; Parameter Name ; Value ; Type                          ;
-+----------------+-------+-------------------------------+
-; n              ; 24    ; Signed Integer                ;
-+----------------+-------+-------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |picoMIPS ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: picoMIPS:myDesign ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; n              ; 8     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:ALU1 ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; n              ; 8     ; Signed Integer               ;
++----------------+-------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: picoMIPS:myDesign|ALU:ALU1 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; n              ; 8     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_Imm:mux_Imm1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: picoMIPS:myDesign|mux_Imm:mux_Imm1 ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; n              ; 8     ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_ROM:mux_ROM1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: picoMIPS:myDesign|mux_ROM:mux_ROM1 ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; n              ; 8     ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: pc:pc1 ;
++----------------+-------+----------------------------+
+; Parameter Name ; Value ; Type                       ;
++----------------+-------+----------------------------+
+; addr_width     ; 4     ; Signed Integer             ;
++----------------+-------+----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: picoMIPS:myDesign|pc:pc1 ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; addr_width     ; 4     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prog:prog1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; addr_width     ; 4     ; Signed Integer                 ;
+; I_size         ; 12    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: picoMIPS:myDesign|prog:prog1 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; addr_width     ; 4     ; Signed Integer                                   ;
-; I_size         ; 12    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: picoMIPS:myDesign|Reg:Reg1 ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; n              ; 8     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:Reg1 ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; n              ; 8     ; Signed Integer               ;
++----------------+-------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -384,19 +369,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 47                          ;
+; arriav_ff             ; 23                          ;
 ;     CLR               ; 7                           ;
 ;     ENA CLR           ; 16                          ;
-;     plain             ; 24                          ;
-; arriav_lcell_comb     ; 130                         ;
-;     arith             ; 31                          ;
-;         1 data inputs ; 22                          ;
-;         2 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 106                         ;
+;     arith             ; 8                           ;
 ;         5 data inputs ; 8                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 98                          ;
-;         1 data inputs ; 1                           ;
+;     normal            ; 97                          ;
 ;         2 data inputs ; 2                           ;
 ;         3 data inputs ; 25                          ;
 ;         4 data inputs ; 13                          ;
@@ -406,7 +387,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 19                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.70                        ;
-; Average LUT depth     ; 4.85                        ;
+; Average LUT depth     ; 5.94                        ;
 +-----------------------+-----------------------------+
 
 
@@ -425,7 +406,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
-    Info: Processing started: Fri Apr 24 10:28:22 2026
+    Info: Processing started: Fri Apr 24 14:53:57 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off picoMIPS4test -c picoMIPS4test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -453,39 +434,36 @@ Info (12021): Found 1 design units, including 1 entities, in source file /elec62
 Info (12021): Found 0 design units, including 0 entities, in source file /elec6234 embedded processors/processor-supporting-gaussian-smoothing/processor/alucodes.sv
 Info (12021): Found 1 design units, including 1 entities, in source file /elec6234 embedded processors/processor-supporting-gaussian-smoothing/processor/alu.sv
     Info (12023): Found entity 1: ALU File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ALU.sv Line: 5
-Info (12127): Elaborating entity "picoMIPS4test" for the top level hierarchy
-Info (12128): Elaborating entity "counter" for hierarchy "counter:c" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS4test.sv Line: 9
-Warning (10230): Verilog HDL assignment warning at counter.sv(8): truncated value with size 32 to match size of target (24) File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/counter.sv Line: 8
-Info (12128): Elaborating entity "picoMIPS" for hierarchy "picoMIPS:myDesign" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS4test.sv Line: 14
-Info (12128): Elaborating entity "ALU" for hierarchy "picoMIPS:myDesign|ALU:ALU1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 23
-Info (12128): Elaborating entity "decoder" for hierarchy "picoMIPS:myDesign|decoder:decoder1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 31
-Info (12128): Elaborating entity "mux_Imm" for hierarchy "picoMIPS:myDesign|mux_Imm:mux_Imm1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 38
-Info (12128): Elaborating entity "mux_ROM" for hierarchy "picoMIPS:myDesign|mux_ROM:mux_ROM1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 45
-Info (12128): Elaborating entity "pc" for hierarchy "picoMIPS:myDesign|pc:pc1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 52
-Info (12128): Elaborating entity "prog" for hierarchy "picoMIPS:myDesign|prog:prog1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 57
+Info (12127): Elaborating entity "picoMIPS" for the top level hierarchy
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 23
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 31
+Info (12128): Elaborating entity "mux_Imm" for hierarchy "mux_Imm:mux_Imm1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 38
+Info (12128): Elaborating entity "mux_ROM" for hierarchy "mux_ROM:mux_ROM1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 45
+Info (12128): Elaborating entity "pc" for hierarchy "pc:pc1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 52
+Info (12128): Elaborating entity "prog" for hierarchy "prog:prog1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 57
 Warning (10030): Net "prog_mem.data_a" at prog.sv(9) has no driver or initial value, using a default initial value '0' File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.sv Line: 9
 Warning (10030): Net "prog_mem.waddr_a" at prog.sv(9) has no driver or initial value, using a default initial value '0' File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.sv Line: 9
 Warning (10030): Net "prog_mem.we_a" at prog.sv(9) has no driver or initial value, using a default initial value '0' File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.sv Line: 9
-Info (12128): Elaborating entity "Reg" for hierarchy "picoMIPS:myDesign|Reg:Reg1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 70
-Info (12128): Elaborating entity "ROM_wave" for hierarchy "picoMIPS:myDesign|ROM_wave:ROM_wave1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 75
+Info (12128): Elaborating entity "Reg" for hierarchy "Reg:Reg1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 70
+Info (12128): Elaborating entity "ROM_wave" for hierarchy "ROM_wave:ROM_wave1" File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/picoMIPS.sv Line: 75
 Warning (10030): Net "mem_wave.data_a" at ROM_wave.sv(9) has no driver or initial value, using a default initial value '0' File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ROM_wave.sv Line: 9
 Warning (10030): Net "mem_wave.waddr_a" at ROM_wave.sv(9) has no driver or initial value, using a default initial value '0' File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ROM_wave.sv Line: 9
 Warning (10030): Net "mem_wave.we_a" at ROM_wave.sv(9) has no driver or initial value, using a default initial value '0' File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ROM_wave.sv Line: 9
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "picoMIPS:myDesign|ROM_wave:ROM_wave1|mem_wave" is uninferred due to asynchronous read logic File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ROM_wave.sv Line: 9
-    Info (276004): RAM logic "picoMIPS:myDesign|prog:prog1|prog_mem" is uninferred due to inappropriate RAM size File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.sv Line: 9
+    Info (276007): RAM logic "ROM_wave:ROM_wave1|mem_wave" is uninferred due to asynchronous read logic File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/ROM_wave.sv Line: 9
+    Info (276004): RAM logic "prog:prog1|prog_mem" is uninferred due to inappropriate RAM size File: H:/ELEC6234 Embedded Processors/Processor-Supporting-Gaussian-Smoothing/processor/prog.sv Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 166 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 142 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 146 logic cells
+    Info (21061): Implemented 122 logic cells
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4909 megabytes
-    Info: Processing ended: Fri Apr 24 10:28:47 2026
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:15
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4902 megabytes
+    Info: Processing ended: Fri Apr 24 14:54:30 2026
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:16
 
 
