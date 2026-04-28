@@ -1,4 +1,54 @@
-|picoMIPS
+|picoMIPS4test
+fastclk => fastclk.IN1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => SW[9].IN1
+LED[0] << picoMIPS:myDesign.LED
+LED[1] << picoMIPS:myDesign.LED
+LED[2] << picoMIPS:myDesign.LED
+LED[3] << picoMIPS:myDesign.LED
+LED[4] << picoMIPS:myDesign.LED
+LED[5] << picoMIPS:myDesign.LED
+LED[6] << picoMIPS:myDesign.LED
+LED[7] << picoMIPS:myDesign.LED
+
+
+|picoMIPS4test|counter:c
+fastclk => count[0].CLK
+fastclk => count[1].CLK
+fastclk => count[2].CLK
+fastclk => count[3].CLK
+fastclk => count[4].CLK
+fastclk => count[5].CLK
+fastclk => count[6].CLK
+fastclk => count[7].CLK
+fastclk => count[8].CLK
+fastclk => count[9].CLK
+fastclk => count[10].CLK
+fastclk => count[11].CLK
+fastclk => count[12].CLK
+fastclk => count[13].CLK
+fastclk => count[14].CLK
+fastclk => count[15].CLK
+fastclk => count[16].CLK
+fastclk => count[17].CLK
+fastclk => count[18].CLK
+fastclk => count[19].CLK
+fastclk => count[20].CLK
+fastclk => count[21].CLK
+fastclk => count[22].CLK
+fastclk => count[23].CLK
+clk <= count[23].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|picoMIPS4test|picoMIPS:myDesign
 clk => clk.IN2
 SW[0] => SW[0].IN1
 SW[1] => SW[1].IN1
@@ -10,17 +60,17 @@ SW[6] => SW[6].IN1
 SW[7] => SW[7].IN1
 SW[8] => SW[8].IN1
 SW[9] => SW[9].IN2
-LED[0] << Reg:Reg1.LED
-LED[1] << Reg:Reg1.LED
-LED[2] << Reg:Reg1.LED
-LED[3] << Reg:Reg1.LED
-LED[4] << Reg:Reg1.LED
-LED[5] << Reg:Reg1.LED
-LED[6] << Reg:Reg1.LED
-LED[7] << Reg:Reg1.LED
+LED[0] <= Reg:Reg1.LED
+LED[1] <= Reg:Reg1.LED
+LED[2] <= Reg:Reg1.LED
+LED[3] <= Reg:Reg1.LED
+LED[4] <= Reg:Reg1.LED
+LED[5] <= Reg:Reg1.LED
+LED[6] <= Reg:Reg1.LED
+LED[7] <= Reg:Reg1.LED
 
 
-|picoMIPS|ALU:ALU1
+|picoMIPS4test|picoMIPS:myDesign|ALU:ALU1
 a[0] => Add0.IN9
 a[0] => Mult0.IN7
 a[1] => Add0.IN8
@@ -66,7 +116,7 @@ result[6] <= result.DB_MAX_OUTPUT_PORT_TYPE
 result[7] <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|picoMIPS|decoder:decoder1
+|picoMIPS4test|picoMIPS:myDesign|decoder:decoder1
 opcode[0] => Decoder0.IN1
 opcode[1] => Decoder0.IN0
 write_En <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
@@ -75,7 +125,7 @@ func <= func.DB_MAX_OUTPUT_PORT_TYPE
 ROM_sel <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|picoMIPS|mux_Imm:mux_Imm1
+|picoMIPS4test|picoMIPS:myDesign|mux_Imm:mux_Imm1
 Rd_data[0] => a.DATAA
 Rd_data[1] => a.DATAA
 Rd_data[2] => a.DATAA
@@ -110,7 +160,7 @@ a[6] <= a.DB_MAX_OUTPUT_PORT_TYPE
 a[7] <= a.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|picoMIPS|mux_ROM:mux_ROM1
+|picoMIPS4test|picoMIPS:myDesign|mux_ROM:mux_ROM1
 ALU_data[0] => Wdata.DATAA
 ALU_data[1] => Wdata.DATAA
 ALU_data[2] => Wdata.DATAA
@@ -145,7 +195,7 @@ Wdata[6] <= Wdata.DB_MAX_OUTPUT_PORT_TYPE
 Wdata[7] <= Wdata.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|picoMIPS|pc:pc1
+|picoMIPS4test|picoMIPS:myDesign|pc:pc1
 clk => pc_out[0]~reg0.CLK
 clk => pc_out[1]~reg0.CLK
 clk => pc_out[2]~reg0.CLK
@@ -172,7 +222,7 @@ pc_out[2] <= pc_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pc_out[3] <= pc_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|picoMIPS|prog:prog1
+|picoMIPS4test|picoMIPS:myDesign|prog:prog1
 addr_prog[0] => prog_mem.RADDR
 addr_prog[1] => prog_mem.RADDR1
 addr_prog[2] => prog_mem.RADDR2
@@ -191,7 +241,7 @@ instruction[10] <= prog_mem.DATAOUT10
 instruction[11] <= prog_mem.DATAOUT11
 
 
-|picoMIPS|Reg:Reg1
+|picoMIPS4test|picoMIPS:myDesign|Reg:Reg1
 clk => R[3][0].CLK
 clk => R[3][1].CLK
 clk => R[3][2].CLK
@@ -356,7 +406,7 @@ LED[6] <= R[3][6].DB_MAX_OUTPUT_PORT_TYPE
 LED[7] <= R[3][7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|picoMIPS|ROM_wave:ROM_wave1
+|picoMIPS4test|picoMIPS:myDesign|ROM_wave:ROM_wave1
 ROM_addr[0] => mem_wave.RADDR
 ROM_addr[1] => mem_wave.RADDR1
 ROM_addr[2] => mem_wave.RADDR2

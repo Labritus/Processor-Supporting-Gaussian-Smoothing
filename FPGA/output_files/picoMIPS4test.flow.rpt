@@ -1,5 +1,5 @@
 Flow report for picoMIPS4test
-Fri Apr 24 14:55:58 2026
+Tue Apr 28 22:47:20 2026
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +---------------------------------+----------------------------------------------------+
-; Flow Status                     ; Successful - Fri Apr 24 14:55:48 2026              ;
+; Flow Status                     ; Successful - Tue Apr 28 22:47:03 2026              ;
 ; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Standard Edition ;
 ; Revision Name                   ; picoMIPS4test                                      ;
-; Top-level Entity Name           ; picoMIPS                                           ;
+; Top-level Entity Name           ; picoMIPS4test                                      ;
 ; Family                          ; Cyclone V                                          ;
 ; Device                          ; 5CSEMA5F31C6                                       ;
 ; Timing Models                   ; Final                                              ;
-; Logic utilization (in ALMs)     ; 72 / 32,070 ( < 1 % )                              ;
-; Total registers                 ; 23                                                 ;
+; Logic utilization (in ALMs)     ; 84 / 32,070 ( < 1 % )                              ;
+; Total registers                 ; 47                                                 ;
 ; Total pins                      ; 19 / 457 ( 4 % )                                   ;
 ; Total virtual pins              ; 0                                                  ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/24/2026 14:54:01 ;
+; Start date & time ; 04/28/2026 22:44:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; picoMIPS4test       ;
 +-------------------+---------------------+
@@ -79,16 +79,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 189228707953373.177703884114824        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 189228707953357.177741265903824        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; picoMIPS    ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; picoMIPS    ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; picoMIPS    ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; picoMIPS                               ; picoMIPS4test ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
@@ -97,11 +94,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:31     ; 1.0                     ; 4902 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:58     ; 1.0                     ; 7601 MB             ; 00:04:01                           ;
-; Assembler            ; 00:00:13     ; 1.0                     ; 5257 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:09     ; 1.1                     ; 5426 MB             ; 00:00:04                           ;
-; Total                ; 00:01:51     ; --                      ; --                  ; 00:04:25                           ;
+; Analysis & Synthesis ; 00:00:38     ; 1.0                     ; 4941 MB             ; 00:00:31                           ;
+; Fitter               ; 00:01:34     ; 1.0                     ; 7509 MB             ; 00:02:30                           ;
+; Assembler            ; 00:00:21     ; 1.0                     ; 5257 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:15     ; 1.2                     ; 5426 MB             ; 00:00:08                           ;
+; Total                ; 00:02:48     ; --                      ; --                  ; 00:03:18                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -110,10 +107,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; JFB60-R2019-C03  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; JFB60-R2019-C03  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; JFB60-R2019-C03  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; JFB60-R2019-C03  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; JFB60-R1023-A14  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; JFB60-R1023-A14  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; JFB60-R1023-A14  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; JFB60-R1023-A14  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
